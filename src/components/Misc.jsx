@@ -10,7 +10,7 @@ const Misc = () => {
         <img src={logo} alt="Logo" data-cursorpointer={true} />
       </a>
       <a href="/franchise" className="franchiseBtn" data-cursorpointer={true}>
-        GET A FRANCHISE
+        GET A FRANCHIISE
       </a>
 
       <BsMouse className="scrollBtn" data-cursorpointer={true} />
