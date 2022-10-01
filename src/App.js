@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import IntroVideo from './components/IntroVideo';
 import Section from './components/Section';
 import freshTopicImg from './assets/academy.png';
@@ -63,123 +63,135 @@ function App() {
     };
   }, []);
 
+  const [loading, setloading] = useState(true);
+  const container = document.getElementById('container');
+
+  if (container) {
+    setTimeout(() => {
+      container.style.display = 'none';
+      setloading(false);
+    }, 2000);
+  }
+
   return (
-    <>
-      <IntroVideo />
+    !loading && (
+      <>
+        <IntroVideo />
 
-      {/* freshtopics */}
-      <Section
-        h3={freshTopic.heading}
-        text={freshTopic.text}
-        btnTxt={freshTopic.btn}
-        imgSrc={freshTopicImg}
-        backgroundColor={pink}
-        headingColor={yellow}
-        textColor={yellow}
-        btnBgColor={yellow}
-        btnColor={pink}
-      />
-      {/* freshtopics2 */}
-      <Section
-        h3={freshTopic2.heading}
-        text={freshTopic2.text}
-        btnTxt={freshTopic2.btn}
-        imgSrc={freshTopic2Img}
-        backgroundColor={pink}
-        headingColor={yellow}
-        textColor={yellow}
-        btnBgColor={yellow}
-        btnColor={pink}
-      />
-      {/* tedTalks */}
-      <Section
-        h3={tedTalks.heading}
-        text={tedTalks.text}
-        btnTxt={tedTalks.btn}
-        imgSrc={tedTalksImg}
-        backgroundColor={yellow}
-        headingColor={pink}
-        textColor={pink}
-        btnBgColor={pink}
-        btnColor={yellow}
-      />
-      {/* frenchise */}
-      <Section
-        h3={franchise.heading}
-        text={franchise.text}
-        btnTxt={franchise.btn}
-        imgSrc={franchiseImg}
-        backgroundColor={white}
-        headingColor={pink}
-        textColor={brown}
-        btnBgColor={brown}
-        btnColor={yellow}
-      />
-      {/* map */}
-      <Section
-        h3={map.heading}
-        text={map.text}
-        imgSrc={mapImg}
-        backgroundColor={pink}
-        headingColor={yellow}
-        textColor={yellow}
-        btnBgColor={brown}
-        btnColor={yellow}
-        hasBtn={false}
-      />
-      {/* courses */}
-      <Section
-        h3={courses.heading}
-        text={courses.text}
-        btnTxt={courses.btn}
-        imgSrc={coursesImg}
-        imgSize={'30%'}
-        backgroundColor={yellow}
-        headingColor={pink}
-        textColor={pink}
-        btnBgColor={pink}
-        btnColor={yellow}
-      />
-      {/* album */}
-      <Section
-        h3={album.heading}
-        text={album.text}
-        btnTxt={album.btn}
-        imgSrc={albumImg}
-        backgroundColor={white}
-        headingColor={pink}
-        textColor={brown}
-        btnBgColor={brown}
-        btnColor={yellow}
-      />
-      {/* barat */}
-      <Section
-        h3={barat.heading}
-        text={barat.text}
-        btnTxt={barat.btn}
-        imgSrc={baratImg}
-        backgroundColor={pink}
-        headingColor={yellow}
-        textColor={yellow}
-        btnBgColor={yellow}
-        btnColor={pink}
-      />
-      {/* chaiwaala */}
-      <Section
-        h3={chaiwala.heading}
-        text={chaiwala.text}
-        btnTxt={chaiwala.btn}
-        imgSrc={chaiwalaImg}
-        backgroundColor={white}
-        headingColor={pink}
-        textColor={brown}
-        btnBgColor={brown}
-        btnColor={yellow}
-      />
-      <Footer />
+        {/* freshtopics */}
+        <Section
+          h3={freshTopic.heading}
+          text={freshTopic.text}
+          btnTxt={freshTopic.btn}
+          imgSrc={freshTopicImg}
+          backgroundColor={pink}
+          headingColor={yellow}
+          textColor={yellow}
+          btnBgColor={yellow}
+          btnColor={pink}
+        />
+        {/* freshtopics2 */}
+        <Section
+          h3={freshTopic2.heading}
+          text={freshTopic2.text}
+          btnTxt={freshTopic2.btn}
+          imgSrc={freshTopic2Img}
+          backgroundColor={pink}
+          headingColor={yellow}
+          textColor={yellow}
+          btnBgColor={yellow}
+          btnColor={pink}
+        />
+        {/* tedTalks */}
+        <Section
+          h3={tedTalks.heading}
+          text={tedTalks.text}
+          btnTxt={tedTalks.btn}
+          imgSrc={tedTalksImg}
+          backgroundColor={yellow}
+          headingColor={pink}
+          textColor={pink}
+          btnBgColor={pink}
+          btnColor={yellow}
+        />
+        {/* frenchise */}
+        <Section
+          h3={franchise.heading}
+          text={franchise.text}
+          btnTxt={franchise.btn}
+          imgSrc={franchiseImg}
+          backgroundColor={white}
+          headingColor={pink}
+          textColor={brown}
+          btnBgColor={brown}
+          btnColor={yellow}
+        />
+        {/* map */}
+        <Section
+          h3={map.heading}
+          text={map.text}
+          imgSrc={mapImg}
+          backgroundColor={pink}
+          headingColor={yellow}
+          textColor={yellow}
+          btnBgColor={brown}
+          btnColor={yellow}
+          hasBtn={false}
+        />
+        {/* courses */}
+        <Section
+          h3={courses.heading}
+          text={courses.text}
+          btnTxt={courses.btn}
+          imgSrc={coursesImg}
+          imgSize={'30%'}
+          backgroundColor={yellow}
+          headingColor={pink}
+          textColor={pink}
+          btnBgColor={pink}
+          btnColor={yellow}
+        />
+        {/* album */}
+        <Section
+          h3={album.heading}
+          text={album.text}
+          btnTxt={album.btn}
+          imgSrc={albumImg}
+          backgroundColor={white}
+          headingColor={pink}
+          textColor={brown}
+          btnBgColor={brown}
+          btnColor={yellow}
+        />
+        {/* barat */}
+        <Section
+          h3={barat.heading}
+          text={barat.text}
+          btnTxt={barat.btn}
+          imgSrc={baratImg}
+          backgroundColor={pink}
+          headingColor={yellow}
+          textColor={yellow}
+          btnBgColor={yellow}
+          btnColor={pink}
+        />
+        {/* chaiwaala */}
+        <Section
+          h3={chaiwala.heading}
+          text={chaiwala.text}
+          btnTxt={chaiwala.btn}
+          imgSrc={chaiwalaImg}
+          backgroundColor={white}
+          headingColor={pink}
+          textColor={brown}
+          btnBgColor={brown}
+          btnColor={yellow}
+        />
+        <Footer />
 
-      <Misc />
-    </>
+        <Misc />
+      </>
+    )
   );
 }
 
